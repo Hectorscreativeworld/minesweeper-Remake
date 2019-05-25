@@ -1,38 +1,36 @@
 import React, { Component } from 'react'
+import HelloWorld from './components/HelloWorld'
 import { request } from 'http'
 
 class App extends Component {
   state = {
-    game: {
-      board: []
-    }
+    board: []
   }
   componentDidMount() {
-    const difficulty = { number: 0 }
+    const data = { number: 0 }
     const request = {
       method: 'POST',
+      // mode: 'cors',
+      // cache: 'no-cache',
+      // credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(difficulty)
+      redirect: 'follow',
+      referrer: 'no-referrer',
+      body: JSON.stringify(data)
     }
+
     fetch('https://minesweeper-api.herokuapp.com/games', request).then(
       response => {
-        // console.log(response.json())
-        return response.json()
-
-      }).then(game => {
-        this.setState(
-          board: game.board)}
-        )
-      })
+        console.log(response.json())
+        // return response.json()
+      }
+    )
   }
+
   render() {
-    return (<div>{
-    this.state.board.map
-    
-    
-    }</div>)
+    return <h1>Hello world</h1>
   }
 }
 
