@@ -7,6 +7,69 @@ html {
 }
 
 body {
-  margin: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   min-height: 100%;
+
+}
+
+.button {
+  font-size: 2rem;
+}
+
+tr {
+  padding: 0%;
+}
+
+.tdBox {
+  border-radius: 10%;
+  border: .5rem solid grey;
+  padding: .5rem;
+  background-color: grey;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+
+}
+
+.big {
+  padding: 2rem;
+}
+
+.medium {
+  padding: 1rem;
+}
+
+.small {
+  padding: .5rem;
+}
+
+.reveal {
+  background-color: white;
+}
+
+.flag {
+  background-image: url(./components/flag.png);
+  background-size: contain;
+
+}
+
+.bomb {
+  background-image: url(./components/mark-bomb.jpg);
+  background-size: contain;
+
+
+
+}
+
+.number {
+  background-color: white;
+  color: green;
+}
+
+.mainTitle {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  font-size: 3rem;
 }

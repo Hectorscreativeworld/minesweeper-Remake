@@ -21,12 +21,16 @@ class App extends Component {
       body: JSON.stringify(data)
     }
 
-    fetch('https://minesweeper-api.herokuapp.com/games', request).then(
-      response => {
-        console.log(response.json())
-        // return response.json()
-      }
-    )
+    fetch('https://minesweeper-api.herokuapp.com/games', request)
+      .then(response => {
+        return response.json()
+      })
+      .then(game => {
+        console.log(game)
+        this.setState({
+          board: game.board
+        })
+      })
   }
 
   render() {
