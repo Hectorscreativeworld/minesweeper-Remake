@@ -4,14 +4,26 @@
 
 html {
   height: 100%;
+
 }
 
 body {
   display: flex;
   align-content: center;
   justify-content: center;
+  background-image: url(./components/brickBG.jpg);
+  /* background-repeat: no-repeat;
+  background-size: 100%; */
   min-height: 100%;
 
+}
+
+.MainNav {
+  display: flex
+}
+
+table {
+  border-spacing: 5px;
 }
 
 .button {
@@ -24,9 +36,9 @@ tr {
 
 .tdBox {
   border-radius: 10%;
-  border: .5rem solid grey;
+  border: .5rem solid lightgray;
   padding: .5rem;
-  background-color: grey;
+  background-color: lightgray;
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
@@ -47,16 +59,19 @@ tr {
 
 .reveal {
   background-color: white;
+  background-size: contain;
 }
 
 .flag {
   background-image: url(./components/flag.png);
+  background-repeat: no-repeat;
   background-size: contain;
 
 }
 
 .bomb {
   background-image: url(./components/mark-bomb.jpg);
+  background-repeat: no-repeat;
   background-size: contain;
 
 
@@ -69,7 +84,9 @@ tr {
 }
 
 .mainTitle {
-  font-family: 'Anton', sans-serif;
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
   font-size: 3rem;
 }

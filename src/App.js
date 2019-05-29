@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-
+// import cell from './components/cell'
+import bomb from './components/2Bomb.png'
+import ImageCell from './components/ImageCell'
 /* Type conversion: String to Number, check out Unary Operator in this link https://www.w3schools.com/js/js_type_conversion.asp */
 
 /* React Docs: Check out the first few pages (philosphy) https://reactjs.org/docs/getting-started.html */
@@ -58,7 +60,8 @@ class App extends Component {
       })
   }
 
-  checkFlag = (row, col) => {
+  checkFlag = (event, row, col) => {
+    event.preventDefault()
     console.log('clicked', row, col)
     fetch(
       `https://minesweeper-api.herokuapp.com/games/${this.state.idGame}/flag`,
@@ -132,7 +135,7 @@ class App extends Component {
     console.log(event.target)
     this.setState(
       {
-        difficulty: +event.target.value
+        difficulty: +event.target.value // unary + operator: '+event'
       },
       () => {
         const request = {
@@ -166,7 +169,17 @@ class App extends Component {
 
     return (
       <main>
-        <h1 className="mainTitle"> Mine Swipe </h1>
+        <div className="MainNav">
+          <h1 className="mainTitle"> Mine Swipe </h1>
+          <section>
+            <img
+              src={bomb}
+              alt="Bomb"
+              // height="80px"
+              // width="80px"
+            />
+          </section>
+        </div>
         <button className="button" onClick={this.resetGame}>
           Reset
         </button>
@@ -195,9 +208,9 @@ class App extends Component {
                     key={a}
                     className={this.checkCell(this.state.board[i][a])}
                     onClick={() => this.tdCellClick(i, a)}
-                    onContextMenu={() => this.checkFlag(i, a)}
+                    onContextMenu={event => this.checkFlag(event, i, a)}
                   >
-                    {this.state.board[i][a]}
+                    <ImageCell character={this.state.board[i][a]} />
                   </td>
                 ))}
               </tr>
