@@ -4,7 +4,6 @@
 
 html {
   height: 100%;
-
 }
 
 body {
@@ -12,14 +11,13 @@ body {
   align-content: center;
   justify-content: center;
   background-image: url(./components/brickBG.jpg);
-  /* background-repeat: no-repeat;
-  background-size: 100%; */
+  background-repeat: repeat-y;
+  background-size: 100%;
   min-height: 100%;
-
 }
 
 .MainNav {
-  display: flex
+  display: flex;
 }
 
 table {
@@ -27,7 +25,7 @@ table {
 }
 
 .button {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 tr {
@@ -36,13 +34,31 @@ tr {
 
 .tdBox {
   border-radius: 10%;
-  border: .5rem solid lightgray;
-  padding: .5rem;
+  border: 0.4rem solid lightgray;
+  padding: 0.4rem;
   background-color: lightgray;
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
+}
 
+.difficultyText {
+  color: white;
+  font-size: 2rem;
+  text-shadow: 5px 5px 10px black;
+}
+
+.loseText {
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 5rem;
+}
+.levelChange {
+  transform: scale(1.7);
+  transform-origin: 0 0;
+  margin: 4rem 0rem 2rem 1rem;
 }
 
 .big {
@@ -54,7 +70,7 @@ tr {
 }
 
 .small {
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .reveal {
@@ -66,16 +82,12 @@ tr {
   background-image: url(./components/flag.png);
   background-repeat: no-repeat;
   background-size: contain;
-
 }
 
 .bomb {
   background-image: url(./components/mark-bomb.jpg);
   background-repeat: no-repeat;
   background-size: contain;
-
-
-
 }
 
 .number {
@@ -89,4 +101,5 @@ tr {
   font-family: 'Permanent Marker', cursive;
   text-align: center;
   font-size: 3rem;
+  margin-left: 20%;
 }

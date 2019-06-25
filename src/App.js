@@ -170,28 +170,23 @@ class App extends Component {
     return (
       <main>
         <div className="MainNav">
-          <h1 className="mainTitle"> Mine Swipe </h1>
+          <h1 className="mainTitle"> Mine Sweeper </h1>
           <section>
-            <img
-              src={bomb}
-              alt="Bomb"
-              // height="80px"
-              // width="80px"
-            />
+            <img src={bomb} alt="Bomb" height="110px" width="110px" />
           </section>
         </div>
         <button className="button" onClick={this.resetGame}>
           Reset
         </button>
-        <label> Choose difficulty </label>
-        <select onChange={this.recordDifficulty}>
+        <label className="difficultyText"> Choose difficulty </label>
+        <select className="levelChange" onChange={this.recordDifficulty}>
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
         </select>
         {this.state.status === 'lost' ? (
           <div>
-            <h1> You lose </h1>
+            <h1 className="loseText"> You lose </h1>
           </div>
         ) : null}
         {this.state.status === 'won' ? (
